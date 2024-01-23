@@ -1,17 +1,17 @@
 # Salty.IO Protocol Analysis
 
 # Table of Contents
-[1 Overview of the Salty.IO Protocol](#1-overview-of-the-salty-io-protocol)
-[1.1 Key Features of the DEX](#1-1-key-features-of-the-dex)
-[1.2 The Core Modules and Main Actors of the Salty.IO Protocol](#1-2-the-core-modules-and-main-actors-of-the-salty-io-protocol)
+- [1 Overview of the Salty.IO Protocol](#1-overview-of-the-salty-io-protocol)
+    - [1.1 Key Features of the DEX](#1-1-key-features-of-the-dex)
+    - [1.2 The Core Modules and Main Actors of the Salty.IO Protocol](#1-2-the-core-modules-and-main-actors-of-the-salty-io-protocol)
 
-[2 Analysis of the Protocol Components and Smart Contracts](#2-analysis-of-the-protocol-components-and-smart-contracts)
-[2.1 The DAO](#2-1-the-dao)
-[2.1.1 DAO.sol](#2-1-1-dao-sol)
-[2.1.2 Proposals.sol](#2-1-2-proposals-sol)
-[2.1.3 DAOConfig.sol](#2-1-3-daoconfig-sol)
-[2.1.4 Parameters.sol](#2-1-4-parameters-sol)
-[2.1.5 Principal Actors of the DAO](#2-1-5-principal-actors-of-the-dao)
+- [2 Analysis of the Protocol Components and Smart Contracts](#2-analysis-of-the-protocol-components-and-smart-contracts)
+    - [2.1 The DAO](#2-1-the-dao)
+    - [2.1.1 DAO.sol](#2-1-1-dao-sol)
+    - [2.1.2 Proposals.sol](#2-1-2-proposals-sol)
+    - [2.1.3 DAOConfig.sol](#2-1-3-daoconfig-sol)
+    - [2.1.4 Parameters.sol](#2-1-4-parameters-sol)
+    - [2.1.5 Principal Actors of the DAO](#2-1-5-principal-actors-of-the-dao)
 
 <a id="1-overview-of-the-salty-io-protocol"></a>
 # 1 Overview of the Salty.IO Protocol
