@@ -100,11 +100,15 @@ The Salty.IO protocol consists of 7 key modules or components that provide the v
 * Liquidity Provider
 * Airdrop Participant
 * Protocol Team
+
+
+**The image below provides a high-level overview of all the the protocol components and the actors involved:**
+
+![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Architecture.png?raw=true)
  
 
 <a id="2-analysis-of-the-protocol-components-and-smart-contracts"></a>
-# 2 Analysis of the Protocol Components and Smart Contracts
-
+# 2 Analysis of the Protocol Components and Smart Contracts  
 
 <a id="2-1-the-dao"></a>
 ## 2.1 The DAO 
@@ -125,7 +129,7 @@ DAO members (stakers of SALT tokens) can propose various changes related to the 
 The image below provides a high-level overview of the DAO with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Architecture](https://raw.github.com/rspadinger/c4-salty/images/Architecture.png)
+![DAO](https://github.com/rspadinger/C4-Salty/blob/master/code/images/DAO.png?raw=true)
 
 
 <a id="2-1-1-dao-sol"></a>
