@@ -194,7 +194,7 @@ DAO members (stakers of SALT tokens) can propose various changes related to the 
 The image below provides a high-level overview of the DAO with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report. 
      
 
-![DAO](https://github.com/rspadinger/C4-Salty/blob/master/code/images/DAO.png?raw=true)
+![DAO](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/DAO.png)
 
 
 <a id="2-1-1-dao-sol"></a>
@@ -474,7 +474,7 @@ The gains from the arbitrage trade(s) are distributed amongst different parties.
 The image below provides a high-level overview of the Pools module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Pools](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Pools.png?raw=true)
+![Pools](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Pools.png)
 
 
 <a id="2-2-1-pools-sol"></a>
@@ -758,7 +758,7 @@ The protocol uses 3 different price aggregators to provide correct prices for WB
 The image below provides a high-level overview of the Price-Feeds module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Price-Feed](https://github.com/rspadinger/C4-Salty/blob/master/code/images/PriceFeeds.png?raw=true)
+![Price-Feed](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/PriceFeeds.png)
 
 
 <a id="2-3-1-priceaggregator-sol"></a>
@@ -919,7 +919,7 @@ Those 3 contracts provide functionality for the Pools, the Staking, the Rewards 
 The image below provides a high-level overview of the Stablecoin module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Stable.png?raw=true)
+![Stable](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Stable.png)
 
 
 <a id="2-4-1-usds-sol"></a>
@@ -1225,7 +1225,7 @@ The Staking component allows users to stake SALT tokens and to receive rewards f
 The image below provides a high-level overview of the Staking module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Staking.png?raw=true)
+![Staking](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Staking.png)
 
 
 <a id="2-5-1-staking-sol"></a>
@@ -1361,7 +1361,7 @@ The Rewards component handles the emission of SALT rewards to liquidity provider
 The image below provides a high-level overview of the Rewards module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Rewards.png?raw=true)
+![Rewards](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Rewards.png)
 
 
 <a id="2-6-1-rewardsemitter-sol"></a>
@@ -1526,7 +1526,7 @@ The Exchange/Launch module uses a decentralized ballot to start up the exchange.
 The image below provides a high-level overview of the Launch module with all smart contracts involved, the core features provided by each individual contract and all involved actors. A detailed description of each smart contract is provided in the following sections of the report.      
 
 
-![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Exchange-Launch.png?raw=true)
+![Exchange-Launch](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Exchange-Launch.png)
 
 
 <a id="2-7-1-bootstrapballot-sol"></a>
@@ -1969,7 +1969,7 @@ As already mentioned, I could not find dedicated tests for the PoolMath library,
 
 **The current test coverage is at 97.7% in terms of lines of code tested. The image below provides a detailed overview of the test coverage for each smart contract file:**
 
-![TestCoverage1](https://github.com/rspadinger/C4-Salty/blob/master/code/images/tests1.png?raw=true)
+![TestCoverage1](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/tests1.png)
 
-![TestCoverage2](https://github.com/rspadinger/C4-Salty/blob/master/code/images/tests2.png?raw=true)
+![TestCoverage2](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/tests2.png)
 
