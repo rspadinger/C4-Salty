@@ -4,7 +4,7 @@
 - [1. Overview of the Salty.IO Protocol](#1-overview-of-the-salty-io-protocol)
     - [1.1. Key Features of the DEX](#1-1-key-features-of-the-dex)
     - [1.2. The Core Modules and Main Actors of the Salty.IO Protocol](#1-2-the-core-modules-and-main-actors-of-the-salty-io-protocol)
-
+    
 - [2. Analysis of the Protocol Components and Smart Contracts](#2-analysis-of-the-protocol-components-and-smart-contracts)
     - [2.1. The DAO](#2-1-the-dao)
     - [2.1.1. DAO.sol](#2-1-1-dao-sol)
