@@ -168,7 +168,7 @@ The Salty.IO protocol consists of 7 key modules or components that provide the v
 
 **The image below provides a high-level overview of all the protocol components and the actors involved:**
 
-![Architecture](https://github.com/rspadinger/C4-Salty/blob/master/code/images/Architecture.png?raw=true)
+![Architecture](https://raw.githubusercontent.com/rspadinger/C4-Salty/master/code/images/Architecture.png)
 
 
 <a id="2-analysis-of-the-protocol-components-and-smart-contracts"></a>
