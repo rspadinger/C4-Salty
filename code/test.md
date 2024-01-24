@@ -65,7 +65,7 @@
     - [3.2. Monitor the LINK Balance of your Upkeep(s)](#monitor-the-link-balance-of-your-upkeep)
     - [3.3. Deployment to another, More Cost Effective Second-Layer Chain](#deployment-to-another-more-cost-effective-second-layer-chain)
     - [3.4. Make Key Features of the Protocol Pausable or Add Rate Limits](#make-key-features-of-the-protocol-pausable-or-add-rate-limits)
-    - [3.5. Upgradeable Contracts - Yes & No](#upgradeable-contracts-yes-no)
+    - [3.5. Upgradeable Contracts](#upgradeable-contracts)
     - [3.6. Use of Third-Party Libraries - Ecrecover](#use-of-third-party-libraries-ecrecover)
     - [3.7. Testing Functions with Complex Logic](#testing-functions-with-complex-logic)
     - [3.8.Monitor Critical Contract Transactions](#monitor-critical-contract-transactions)
@@ -73,7 +73,7 @@
 
 - [4. Centralization Risks](#4-centralization-risks)
 
-- [5. Analysis of Protocol Testing Strategies](#(-analysis-of-protocol-testing-strategies)
+- [5. Analysis of Protocol Testing Strategies](#5-analysis-of-protocol-testing-strategies)
 
 
 
@@ -1860,8 +1860,8 @@ This, of course goes against the thought of protocol decentralization and certai
 So, there are advantages and disadvantages to both approaches. There is no perfect or single, right decision and the team carefully needs to look at both options and decide if a higher level of potential "disaster" prevention is more favorable than a most optimal level of system decentralization.
 
 
-<a id="upgradeable-contracts-yes-no"></a>
-## 3.5. Upgradeable Contracts - Yes & No
+<a id="upgradeable-contracts"></a>
+## 3.5. Upgradeable Contracts
 
 The contracts of the protocol are currently not upgradeable. This means, if at a later stage bugs need to be fixed are additional features need to be rolled out, things will be more complicated than they would be if the protocol would have been designed with upgradeability in mind:
 
