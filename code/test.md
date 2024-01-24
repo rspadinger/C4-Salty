@@ -1401,7 +1401,7 @@ References to various configuration contracts, a boolean that indicates whether 
 
 <a id="2-6-2-emissions-sol"></a>
 ### 2.6.2. Emissions.sol
-                                                                                                        +
+                                                                                                       
 **Source:** https://github.com/code-423n4/2024-01-salty/blob/main/src/rewards/Emissions.sol
 
 This contract stores the SALT emissions from the launch of theSalty.IO protocol and distributes them at a current rate of 0.5% per week to the corresponding RewardsEmitter contract. 
@@ -1970,5 +1970,6 @@ As already mentioned, I could not find dedicated tests for the PoolMath library,
 **The current test coverage is at 97.7% in terms of lines of code tested. The image below provides a detailed overview of the test coverage for each smart contract file:**
 
 ![TestCoverage1](https://github.com/rspadinger/C4-Salty/blob/master/code/images/tests1.png?raw=true)
+
 ![TestCoverage2](https://github.com/rspadinger/C4-Salty/blob/master/code/images/tests2.png?raw=true)
 
