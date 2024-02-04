@@ -1,0 +1,558 @@
+$ slither ./src/dao/DAO.sol --print human-summary
+| ICollateralAndLiquidity |      29     |       |                    |      No      |                    |
+|       ILiquidizer       |      4      |       |                    |      No      |                    |
+|      IStableConfig      |      12     |       |                    |      No      |                    |
+|          IUSDS          |      9      | ERC20 |     No Minting     |      No      |                    |
+|                         |             |       | Approve Race Cond. |              |                    |
+|                         |             |       |                    |              |                    |
+|         IStaking        |      22     |       |                    |      No      |                    |
+|      IStakingConfig     |      8      |       |                    |      No      |                    |
++-------------------------+-------------+-------+--------------------+--------------+--------------------+
+INFO:Slither:./src/dao/DAO.sol analyzed (41 contracts)
+
+Robert@RS-DELL MINGW64 /d/_ROBERT/_IT/_Consulting/Audits/_Audits/C4-Salty/code (master)
+$ slither ./src/dao/DAO.sol --print contract-summary
+INFO:Slither:slither.config.json has an unknown key: __solc_remaps : @openzeppelin=../node_modules/@openzeppelin,@chainlink=../node_modules/@chainlink
+INFO:Slither:slither.config.json has an unknown key: ___json : SLITHER-RESULTS.json
+INFO:Slither:slither.config.json has an unknown key: ___printers_to_run : contract-summary,inheritance-graph,function-summary
+'solc --version' running
+'solc openzeppelin-contracts=./lib/openzeppelin-contracts chainlink=./node_modules/chainlink ./src/dao/DAO.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,D:\_ROBERT\_IT\_Consulting\Audits\_Audits\C4-Salty\code\src\dao' running
+Compilation warnings/errors on ./src/dao/DAO.sol:
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> src/pools/PoolUtils.sol
+
+Warning: Contract code size is 28475 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> src/dao/DAO.sol:23:1:
+   |
+23 | contract DAO is IDAO, Parameters, ReentrancyGuard
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+INFO:Printers:
++ Contract VestingWallet (Most derived contract)
+  - From Context
+    - _msgData() (internal)
+    - _msgSender() (internal)
+  - From VestingWallet
+    - _vestingSchedule(uint256,uint64) (internal)
+    - beneficiary() (public)
+    - constructor(address,uint64,uint64) (public)
+    - duration() (public)
+    - receive() (external)
+    - releasable() (public)
+    - releasable(address) (public)
+    - release() (public)
+    - release(address) (public)
+    - released() (public)
+    - released(address) (public)
+    - start() (public)
+    - vestedAmount(address,uint64) (public)
+    - vestedAmount(uint64) (public)
+
++ Contract ReentrancyGuard
+  - From ReentrancyGuard
+    - _nonReentrantAfter() (private)
+    - _nonReentrantBefore() (private)
+    - _reentrancyGuardEntered() (internal)
+    - constructor() (internal)
+
++ Contract IERC20
+  - From IERC20
+    - allowance(address,address) (external)
+    - approve(address,uint256) (external)
+    - balanceOf(address) (external)
+    - totalSupply() (external)
+    - transfer(address,uint256) (external)
+    - transferFrom(address,address,uint256) (external)
+
++ Contract IERC20Permit (Most derived contract)
+  - From IERC20Permit
+    - DOMAIN_SEPARATOR() (external)
+    - nonces(address) (external)
+    - permit(address,address,uint256,uint256,uint8,bytes32,bytes32) (external)
+
++ Contract SafeERC20 (Most derived contract)
+  - From SafeERC20
+    - _callOptionalReturn(IERC20,bytes) (private)
+    - _callOptionalReturnBool(IERC20,bytes) (private)
+    - forceApprove(IERC20,address,uint256) (internal)
+    - safeApprove(IERC20,address,uint256) (internal)
+    - safeDecreaseAllowance(IERC20,address,uint256) (internal)
+    - safeIncreaseAllowance(IERC20,address,uint256) (internal)
+    - safePermit(IERC20Permit,address,address,uint256,uint256,uint8,bytes32,bytes32) (internal)
+    - safeTransfer(IERC20,address,uint256) (internal)
+    - safeTransferFrom(IERC20,address,address,uint256) (internal)
+
++ Contract Address (Most derived contract)
+  - From Address
+    - _revert(bytes,string) (private)
+    - functionCall(address,bytes) (internal)
+    - functionCall(address,bytes,string) (internal)
+    - functionCallWithValue(address,bytes,uint256) (internal)
+    - functionCallWithValue(address,bytes,uint256,string) (internal)
+    - functionDelegateCall(address,bytes) (internal)
+    - functionDelegateCall(address,bytes,string) (internal)
+    - functionStaticCall(address,bytes) (internal)
+    - functionStaticCall(address,bytes,string) (internal)
+    - isContract(address) (internal)
+    - sendValue(address,uint256) (internal)
+    - verifyCallResult(bool,bytes,string) (internal)
+    - verifyCallResultFromTarget(address,bool,bytes,string) (internal)
+
++ Contract Context
+  - From Context
+    - _msgData() (internal)
+    - _msgSender() (internal)
+
++ Contract Math (Most derived contract)
+  - From Math
+    - average(uint256,uint256) (internal)
+    - ceilDiv(uint256,uint256) (internal)
+    - log10(uint256) (internal)
+    - log10(uint256,Math.Rounding) (internal)
+    - log2(uint256) (internal)
+    - log2(uint256,Math.Rounding) (internal)
+    - log256(uint256) (internal)
+    - log256(uint256,Math.Rounding) (internal)
+    - max(uint256,uint256) (internal)
+    - min(uint256,uint256) (internal)
+    - mulDiv(uint256,uint256,uint256) (internal)
+    - mulDiv(uint256,uint256,uint256,Math.Rounding) (internal)
+    - sqrt(uint256) (internal)
+    - sqrt(uint256,Math.Rounding) (internal)
+
++ Contract Upkeep (Most derived contract)
+  - From ReentrancyGuard
+    - _nonReentrantAfter() (private)
+    - _nonReentrantBefore() (private)
+    - _reentrancyGuardEntered() (internal)
+    - constructor() (internal)
+  - From IUpkeep
+    - lastUpkeepTimeEmissions() (external)
+    - lastUpkeepTimeRewardsEmitters() (external)
+  - From Upkeep
+    - _formPOL(IERC20,IERC20,uint256) (internal)
+    - constructor(IPools,IExchangeConfig,IPoolsConfig,IDAOConfig,IStableConfig,IPriceAggregator,ISaltRewards,ICollateralAndLiquidity,IEmissions,IDAO) (public)
+    - currentRewardsForCallingPerformUpkeep() (public)
+    - performUpkeep() (public)
+    - step1() (public)
+    - step10() (public)
+    - step11() (public)
+    - step2(address) (public)
+    - step3() (public)
+    - step4() (public)
+    - step5() (public)
+    - step6() (public)
+    - step7() (public)
+    - step8() (public)
+    - step9() (public)
+
++ Contract DAO (Most derived contract)
+  - From ReentrancyGuard
+    - _nonReentrantAfter() (private)
+    - _nonReentrantBefore() (private)
+    - _reentrancyGuardEntered() (internal)
+    - constructor() (internal)
+  - From Parameters
+    - _executeParameterChange(Parameters.ParameterTypes,bool,IPoolsConfig,IStakingConfig,IRewardsConfig,IStableConfig,IDAOConfig,IPriceAggregator) (internal)
+  - From IDAO
+    - pools() (external)
+    - websiteURL() (external)
+  - From DAO
+    - _executeApproval(Ballot) (internal)
+    - _executeSetContract(Ballot) (internal)
+    - _executeSetWebsiteURL(Ballot) (internal)
+    - _finalizeApprovalBallot(uint256) (internal)
+    - _finalizeParameterBallot(uint256) (internal)
+    - _finalizeTokenWhitelisting(uint256) (internal)
+    - constructor(IPools,IProposals,IExchangeConfig,IPoolsConfig,IStakingConfig,IRewardsConfig,IStableConfig,IDAOConfig,IPriceAggregator,IRewardsEmitter,ICollateralAndLiquidity) (public)
+    - countryIsExcluded(string) (external)
+    - finalizeBallot(uint256) (external)
+    - formPOL(IERC20,IERC20,uint256,uint256) (external)
+    - processRewardsFromPOL() (external)
+    - withdrawArbitrageProfits(IERC20) (external)
+    - withdrawPOL(IERC20,IERC20,uint256) (external)
+
++ Contract Parameters
+  - From Parameters
+    - _executeParameterChange(Parameters.ParameterTypes,bool,IPoolsConfig,IStakingConfig,IRewardsConfig,IStableConfig,IDAOConfig,IPriceAggregator) (internal)
+
++ Contract ICalledContract (Most derived contract)
+  - From ICalledContract
+    - callFromDAO(uint256) (external)
+
++ Contract IDAO
+  - From IDAO
+    - countryIsExcluded(string) (external)
+    - finalizeBallot(uint256) (external)
+    - formPOL(IERC20,IERC20,uint256,uint256) (external)
+    - pools() (external)
+    - processRewardsFromPOL() (external)
+    - websiteURL() (external)
+    - withdrawArbitrageProfits(IERC20) (external)
+    - withdrawPOL(IERC20,IERC20,uint256) (external)
+
++ Contract IDAOConfig (Most derived contract)
+  - From IDAOConfig
+    - arbitrageProfitsPercentPOL() (external)
+    - ballotMinimumDuration() (external)
+    - baseBallotQuorumPercentTimes1000() (external)
+    - bootstrappingRewards() (external)
+    - changeArbitrageProfitsPercentPOL(bool) (external)
+    - changeBallotDuration(bool) (external)
+    - changeBaseBallotQuorumPercent(bool) (external)
+    - changeBootstrappingRewards(bool) (external)
+    - changeMaxPendingTokensForWhitelisting(bool) (external)
+    - changePercentPolRewardsBurned(bool) (external)
+    - changeRequiredProposalPercentStake(bool) (external)
+    - changeUpkeepRewardPercent(bool) (external)
+    - maxPendingTokensForWhitelisting() (external)
+    - percentPolRewardsBurned() (external)
+    - requiredProposalPercentStakeTimes1000() (external)
+    - upkeepRewardPercent() (external)
+
++ Contract IProposals (Most derived contract)
+  - From IProposals
+    - ballotForID(uint256) (external)
+    - ballotIsApproved(uint256) (external)
+    - canFinalizeBallot(uint256) (external)
+    - castVote(uint256,Vote) (external)
+    - createConfirmationProposal(string,BallotType,address,string,string) (external)
+    - lastUserVoteForBallot(uint256,address) (external)
+    - markBallotAsFinalized(uint256) (external)
+    - nextBallotID() (external)
+    - openBallots() (external)
+    - openBallotsByName(string) (external)
+    - openBallotsForTokenWhitelisting() (external)
+    - proposeCallContract(address,uint256,string) (external)
+    - proposeCountryExclusion(string,string) (external)
+    - proposeCountryInclusion(string,string) (external)
+    - proposeParameterBallot(uint256,string) (external)
+    - proposeSendSALT(address,uint256,string) (external)
+    - proposeSetContractAddress(string,address,string) (external)
+    - proposeTokenUnwhitelisting(IERC20,string,string) (external)
+    - proposeTokenWhitelisting(IERC20,string,string) (external)
+    - proposeWebsiteUpdate(string,string) (external)
+    - requiredQuorumForBallotType(BallotType) (external)
+    - tokenWhitelistingBallotWithTheMostVotes() (external)
+    - totalVotesCastForBallot(uint256) (external)
+    - userHasActiveProposal(address) (external)
+    - votesCastForBallot(uint256,Vote) (external)
+    - winningParameterVote(uint256) (external)
+
++ Contract IAccessManager (Most derived contract)
+  - From IAccessManager
+    - excludedCountriesUpdated() (external)
+    - geoVersion() (external)
+    - grantAccess(bytes) (external)
+    - walletHasAccess(address) (external)
+
++ Contract IExchangeConfig (Most derived contract)
+  - From IExchangeConfig
+    - accessManager() (external)
+    - airdrop() (external)
+    - dai() (external)
+    - dao() (external)
+    - daoVestingWallet() (external)
+    - initialDistribution() (external)
+    - managedTeamWallet() (external)
+    - salt() (external)
+    - setAccessManager(IAccessManager) (external)
+    - setContracts(IDAO,IUpkeep,IInitialDistribution,IAirdrop,VestingWallet,VestingWallet) (external)
+    - teamVestingWallet() (external)
+    - upkeep() (external)
+    - usds() (external)
+    - walletHasAccess(address) (external)
+    - wbtc() (external)
+    - weth() (external)
+
++ Contract IManagedWallet (Most derived contract)
+  - From IManagedWallet
+    - activeTimelock() (external)
+    - changeWallets() (external)
+    - confirmationWallet() (external)
+    - mainWallet() (external)
+    - proposeWallets(address,address) (external)
+    - proposedConfirmationWallet() (external)
+    - proposedMainWallet() (external)
+
++ Contract ISalt (Most derived contract)
+  - From IERC20
+    - allowance(address,address) (external)
+    - approve(address,uint256) (external)
+    - balanceOf(address) (external)
+    - totalSupply() (external)
+    - transfer(address,uint256) (external)
+    - transferFrom(address,address,uint256) (external)
+  - From ISalt
+    - burnTokensInContract() (external)
+    - totalBurned() (external)
+
++ Contract IUpkeep
+  - From IUpkeep
+    - currentRewardsForCallingPerformUpkeep() (external)
+    - lastUpkeepTimeEmissions() (external)
+    - lastUpkeepTimeRewardsEmitters() (external)
+    - performUpkeep() (external)
+
++ Contract IAirdrop (Most derived contract)
+  - From IAirdrop
+    - allowClaiming() (external)
+    - authorizeWallet(address) (external)
+    - claimAirdrop() (external)
+    - claimed(address) (external)
+    - claimingAllowed() (external)
+    - isAuthorized(address) (external)
+    - numberAuthorized() (external)
+    - saltAmountForEachUser() (external)
+
++ Contract IBootstrapBallot (Most derived contract)
+  - From IBootstrapBallot
+    - ballotFinalized() (external)
+    - completionTimestamp() (external)
+    - finalizeBallot() (external)
+    - hasVoted(address) (external)
+    - startExchangeNo() (external)
+    - startExchangeYes() (external)
+    - vote(bool,bytes) (external)
+
++ Contract IInitialDistribution (Most derived contract)
+  - From IInitialDistribution
+    - bootstrapBallot() (external)
+    - distributionApproved() (external)
+
++ Contract PoolUtils (Most derived contract)
+  - From PoolUtils
+    - _placeInternalSwap(IPools,IERC20,IERC20,uint256,uint256) (internal)
+    - _poolID(IERC20,IERC20) (internal)
+    - _poolIDAndFlipped(IERC20,IERC20) (internal)
+
++ Contract IPoolStats
+  - From IPoolStats
+    - arbitrageIndicies(bytes32) (external)
+    - clearProfitsForPools() (external)
+    - profitsForWhitelistedPools() (external)
+    - updateArbitrageIndicies() (external)
+
++ Contract IPools (Most derived contract)
+  - From IPoolStats
+    - arbitrageIndicies(bytes32) (external)
+    - clearProfitsForPools() (external)
+    - profitsForWhitelistedPools() (external)
+    - updateArbitrageIndicies() (external)
+  - From IPools
+    - addLiquidity(IERC20,IERC20,uint256,uint256,uint256,uint256) (external)
+    - deposit(IERC20,uint256) (external)
+    - depositDoubleSwapWithdraw(IERC20,IERC20,IERC20,uint256,uint256,uint256) (external)
+    - depositSwapWithdraw(IERC20,IERC20,uint256,uint256,uint256) (external)
+    - depositedUserBalance(address,IERC20) (external)
+    - exchangeIsLive() (external)
+    - getPoolReserves(IERC20,IERC20) (external)
+    - removeLiquidity(IERC20,IERC20,uint256,uint256,uint256,uint256) (external)
+    - setContracts(IDAO,ICollateralAndLiquidity) (external)
+    - startExchangeApproved() (external)
+    - swap(IERC20,IERC20,uint256,uint256,uint256) (external)
+    - withdraw(IERC20,uint256) (external)
+
++ Contract IPoolsConfig (Most derived contract)
+  - From IPoolsConfig
+    - changeMaximumInternalSwapPercentTimes1000(bool) (external)
+    - changeMaximumWhitelistedPools(bool) (external)
+    - isWhitelisted(bytes32) (external)
+    - maximumInternalSwapPercentTimes1000() (external)
+    - maximumWhitelistedPools() (external)
+    - numberOfWhitelistedPools() (external)
+    - tokenHasBeenWhitelisted(IERC20,IERC20,IERC20) (external)
+    - underlyingTokenPair(bytes32) (external)
+    - unwhitelistPool(IPools,IERC20,IERC20) (external)
+    - whitelistPool(IPools,IERC20,IERC20) (external)
+    - whitelistedPools() (external)
+
++ Contract IPriceAggregator (Most derived contract)
+  - From IPriceAggregator
+    - changeMaximumPriceFeedPercentDifferenceTimes1000(bool) (external)
+    - changePriceFeedModificationCooldown(bool) (external)
+    - getPriceBTC() (external)
+    - getPriceETH() (external)
+    - maximumPriceFeedPercentDifferenceTimes1000() (external)
+    - priceFeed1() (external)
+    - priceFeed2() (external)
+    - priceFeed3() (external)
+    - priceFeedModificationCooldown() (external)
+    - setInitialFeeds(IPriceFeed,IPriceFeed,IPriceFeed) (external)
+    - setPriceFeed(uint256,IPriceFeed) (external)
+
++ Contract IPriceFeed (Most derived contract)
+  - From IPriceFeed
+    - getPriceBTC() (external)
+    - getPriceETH() (external)
+
++ Contract IEmissions (Most derived contract)
+  - From IEmissions
+    - performUpkeep(uint256) (external)
+
++ Contract IRewardsConfig (Most derived contract)
+  - From IRewardsConfig
+    - changeEmissionsWeeklyPercent(bool) (external)
+    - changePercentRewardsSaltUSDS(bool) (external)
+    - changeRewardsEmitterDailyPercent(bool) (external)
+    - changeStakingRewardsPercent(bool) (external)
+    - emissionsWeeklyPercentTimes1000() (external)
+    - percentRewardsSaltUSDS() (external)
+    - rewardsEmitterDailyPercentTimes1000() (external)
+    - stakingRewardsPercent() (external)
+
++ Contract IRewardsEmitter (Most derived contract)
+  - From IRewardsEmitter
+    - addSALTRewards(AddedReward[]) (external)
+    - pendingRewardsForPools(bytes32[]) (external)
+    - performUpkeep(uint256) (external)
+
++ Contract ISaltRewards (Most derived contract)
+  - From ISaltRewards
+    - liquidityRewardsEmitter() (external)
+    - performUpkeep(bytes32[],uint256[]) (external)
+    - sendInitialSaltRewards(uint256,bytes32[]) (external)
+    - stakingRewardsEmitter() (external)
+
++ Contract ICollateralAndLiquidity (Most derived contract)
+  - From ILiquidity
+    - depositLiquidityAndIncreaseShare(IERC20,IERC20,uint256,uint256,uint256,uint256,bool) (external)
+    - withdrawLiquidityAndClaim(IERC20,IERC20,uint256,uint256,uint256,uint256) (external)
+  - From IStakingRewards
+    - addSALTRewards(AddedReward[]) (external)
+    - claimAllRewards(bytes32[]) (external)
+    - totalRewardsForPools(bytes32[]) (external)
+    - totalShares(bytes32) (external)
+    - totalSharesForPools(bytes32[]) (external)
+    - userCooldowns(address,bytes32[]) (external)
+    - userRewardForPool(address,bytes32) (external)
+    - userRewardsForPools(address,bytes32[]) (external)
+    - userShareForPool(address,bytes32) (external)
+    - userShareForPools(address,bytes32[]) (external)
+    - userVirtualRewardsForPool(address,bytes32) (external)
+  - From ICollateralAndLiquidity
+    - borrowUSDS(uint256) (external)
+    - canUserBeLiquidated(address) (external)
+    - depositCollateralAndIncreaseShare(uint256,uint256,uint256,uint256,bool) (external)
+    - findLiquidatableUsers() (external)
+    - findLiquidatableUsers(uint256,uint256) (external)
+    - liquidateUser(address) (external)
+    - liquidizer() (external)
+    - maxBorrowableUSDS(address) (external)
+    - maxWithdrawableCollateral(address) (external)
+    - numberOfUsersWithBorrowedUSDS() (external)
+    - repayUSDS(uint256) (external)
+    - totalCollateralValueInUSD() (external)
+    - underlyingTokenValueInUSD(uint256,uint256) (external)
+    - usdsBorrowedByUsers(address) (external)
+    - userCollateralValueInUSD(address) (external)
+    - withdrawCollateralAndClaim(uint256,uint256,uint256,uint256) (external)
+
++ Contract ILiquidizer (Most derived contract)
+  - From ILiquidizer
+    - incrementBurnableUSDS(uint256) (external)
+    - performUpkeep() (external)
+    - setContracts(ICollateralAndLiquidity,IPools,IDAO) (external)
+    - usdsThatShouldBeBurned() (external)
+
++ Contract IStableConfig (Most derived contract)
+  - From IStableConfig
+    - changeInitialCollateralRatioPercent(bool) (external)
+    - changeMaxRewardValueForCallingLiquidation(bool) (external)
+    - changeMinimumCollateralRatioPercent(bool) (external)
+    - changeMinimumCollateralValueForBorrowing(bool) (external)
+    - changePercentArbitrageProfitsForStablePOL(bool) (external)
+    - changeRewardPercentForCallingLiquidation(bool) (external)
+    - initialCollateralRatioPercent() (external)
+    - maxRewardValueForCallingLiquidation() (external)
+    - minimumCollateralRatioPercent() (external)
+    - minimumCollateralValueForBorrowing() (external)
+    - percentArbitrageProfitsForStablePOL() (external)
+    - rewardPercentForCallingLiquidation() (external)
+
++ Contract IUSDS (Most derived contract)
+  - From IERC20
+    - allowance(address,address) (external)
+    - approve(address,uint256) (external)
+    - balanceOf(address) (external)
+    - totalSupply() (external)
+    - transfer(address,uint256) (external)
+    - transferFrom(address,address,uint256) (external)
+  - From IUSDS
+    - burnTokensInContract() (external)
+    - mintTo(address,uint256) (external)
+    - setCollateralAndLiquidity(ICollateralAndLiquidity) (external)
+
++ Contract ILiquidity
+  - From IStakingRewards
+    - addSALTRewards(AddedReward[]) (external)
+    - claimAllRewards(bytes32[]) (external)
+    - totalRewardsForPools(bytes32[]) (external)
+    - totalShares(bytes32) (external)
+    - totalSharesForPools(bytes32[]) (external)
+    - userCooldowns(address,bytes32[]) (external)
+    - userRewardForPool(address,bytes32) (external)
+    - userRewardsForPools(address,bytes32[]) (external)
+    - userShareForPool(address,bytes32) (external)
+    - userShareForPools(address,bytes32[]) (external)
+    - userVirtualRewardsForPool(address,bytes32) (external)
+  - From ILiquidity
+    - depositLiquidityAndIncreaseShare(IERC20,IERC20,uint256,uint256,uint256,uint256,bool) (external)
+    - withdrawLiquidityAndClaim(IERC20,IERC20,uint256,uint256,uint256,uint256) (external)
+
++ Contract IStaking (Most derived contract)
+  - From IStakingRewards
+    - addSALTRewards(AddedReward[]) (external)
+    - claimAllRewards(bytes32[]) (external)
+    - totalRewardsForPools(bytes32[]) (external)
+    - totalShares(bytes32) (external)
+    - totalSharesForPools(bytes32[]) (external)
+    - userCooldowns(address,bytes32[]) (external)
+    - userRewardForPool(address,bytes32) (external)
+    - userRewardsForPools(address,bytes32[]) (external)
+    - userShareForPool(address,bytes32) (external)
+    - userShareForPools(address,bytes32[]) (external)
+    - userVirtualRewardsForPool(address,bytes32) (external)
+  - From IStaking
+    - calculateUnstake(uint256,uint256) (external)
+    - cancelUnstake(uint256) (external)
+    - recoverSALT(uint256) (external)
+    - stakeSALT(uint256) (external)
+    - transferStakedSaltFromAirdropToUser(address,uint256) (external)
+    - unstake(uint256,uint256) (external)
+    - unstakeByID(uint256) (external)
+    - unstakesForUser(address) (external)
+    - unstakesForUser(address,uint256,uint256) (external)
+    - userUnstakeIDs(address) (external)
+    - userXSalt(address) (external)
+
++ Contract IStakingConfig (Most derived contract)
+  - From IStakingConfig
+    - changeMaxUnstakeWeeks(bool) (external)
+    - changeMinUnstakePercent(bool) (external)
+    - changeMinUnstakeWeeks(bool) (external)
+    - changeModificationCooldown(bool) (external)
+    - maxUnstakeWeeks() (external)
+    - minUnstakePercent() (external)
+    - minUnstakeWeeks() (external)
+    - modificationCooldown() (external)
+
++ Contract IStakingRewards
+  - From IStakingRewards
+    - addSALTRewards(AddedReward[]) (external)
+    - claimAllRewards(bytes32[]) (external)
+    - totalRewardsForPools(bytes32[]) (external)
+    - totalShares(bytes32) (external)
+    - totalSharesForPools(bytes32[]) (external)
+    - userCooldowns(address,bytes32[]) (external)
+    - userRewardForPool(address,bytes32) (external)
+    - userRewardsForPools(address,bytes32[]) (external)
+    - userShareForPool(address,bytes32) (external)
+    - userShareForPools(address,bytes32[]) (external)
+    - userVirtualRewardsForPool(address,bytes32) (external)
+
+INFO:Slither:./src/dao/DAO.sol analyzed (41 contracts)
+
+Robert@RS-DELL MINGW64 /d/_ROBERT/_IT/_Consulting/Audits/_Audits/C4-Salty/code (master)
+$

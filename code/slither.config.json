@@ -1,0 +1,13 @@
+{
+    "__solc_remaps": "@openzeppelin=../node_modules/@openzeppelin,@chainlink=../node_modules/@chainlink",
+    "solc_remaps": ["openzeppelin-contracts=./lib/openzeppelin-contracts", "chainlink=./node_modules/chainlink"],
+    "exclude_informational": false,
+    "exclude_low": false,
+    "exclude_medium": false,
+    "exclude_high": false,
+    "disable_color": false,
+    "filter_paths": "(lib/|script/|test/)",
+    "___json": "SLITHER-RESULTS.json",
+    "___printers_to_run": "contract-summary,inheritance-graph,function-summary"
+}
+
